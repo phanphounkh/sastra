@@ -318,7 +318,7 @@ cambo-ai/
 ---
 
 ```
-Build with Love by SASTRA AI TEAM
+Built with Love by PHAN PHOUN
 ```
 
 ## 📜 License
