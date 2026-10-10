@@ -317,6 +317,10 @@ cambo-ai/
 
 ---
 
+```
+Build with Love by SASTRA AI TEAM
+```
+
 ## 📜 License
 
 Distributed under the **MIT License**. Built with pride for Cambodia's sovereign technology ecosystem.
