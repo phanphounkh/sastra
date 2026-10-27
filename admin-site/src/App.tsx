@@ -55,6 +55,22 @@ export default function App() {
       if (l.status === "fulfilled") setLogs(l.value);
       else console.error("Admin logs error:", l.reason);
 
+      const hasAuthError = [s, u, p, l].some(
+        (r) =>
+          r.status === "rejected" &&
+          (r.reason?.message?.includes("Admin access required") ||
+           r.reason?.message?.includes("403") ||
+           r.reason?.message?.includes("401"))
+      );
+
+      if (hasAuthError) {
+        localStorage.removeItem("sastra_admin_token");
+        localStorage.removeItem("sastra_admin_user");
+        setAdminToken(null);
+        toast.error("Admin session expired. Please sign in again.");
+        return;
+      }
+
       if (s.status === "rejected" && u.status === "rejected") {
         toast.error("Failed to connect to backend API");
       }
